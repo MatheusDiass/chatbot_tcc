@@ -1,8 +1,0 @@
-{
-  "labels":[
-    "RANDOM_MOVIE",
-    "DIRECTOR_NAME"
-  ],
-  "threshold":0.5,
-  "positive_label":null
-}
