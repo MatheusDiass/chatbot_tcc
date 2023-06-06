@@ -2,6 +2,7 @@ import spacy
 from textcat.script import train_textcat
 from ner.script import train_ner
 
+
 def train_components():
     nlp = spacy.blank("pt")
 

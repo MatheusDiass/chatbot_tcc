@@ -18,7 +18,7 @@ def train_textcat(nlp):
     textcat = nlp.add_pipe("textcat", config=config)
 
     # Adiciona os rotulos ao componente
-    labels = ["RANDOM_MOVIE", "DIRECTOR_NAME"]
+    labels = ["RANDOM_MOVIE", "GENDER_MOVIE"]
 
     # Adiciona os rotulos ao componente
     for label in labels:
@@ -33,7 +33,7 @@ def train_textcat(nlp):
     textcat.initialize(lambda: train_examples, nlp=nlp)
 
     # Épocas(loop) para treinar o modelo (TextCat Component)
-    epochs = 30
+    epochs = 100
 
     with nlp.select_pipes(enable="textcat"):
         # Inicializa os pesos do modelo TextCat para 0 (Modelo esquece tudo o que sabe)

@@ -19,14 +19,13 @@
   "labels":{
     "textcat":[
       "RANDOM_MOVIE",
-      "DIRECTOR_NAME"
+      "GENDER_MOVIE",
+      "PLATFORM_MOVIE"
     ],
     "ner":[
-      "AUTHORS",
-      "DIRECTOR",
       "GENDER",
       "MOVIE",
-      "RELEASED"
+      "PLATFORM"
     ]
   },
   "pipeline":[

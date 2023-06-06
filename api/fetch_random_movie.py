@@ -3,7 +3,7 @@ import requests
 
 
 def fetch_random_movie():
-    number_random = random.randint(1, 500)
+    number_random = random.randint(1, 300)
 
     url = f"https://api.themoviedb.org/3/movie/{number_random}?language=pt"
     headers = {

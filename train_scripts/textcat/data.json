@@ -8,6 +8,22 @@
     }
   ],
   [
+    "Me fale um filme aleatório",
+    {
+      "cats": {
+        "RANDOM_MOVIE": 1
+      }
+    }
+  ],
+  [
+    "Filme aleatório",
+    {
+      "cats": {
+        "RANDOM_MOVIE": 1
+      }
+    }
+  ],
+  [
     "Me fale outro filme",
     {
       "cats": {
@@ -16,18 +32,121 @@
     }
   ],
   [
-    "Nome do diretor do filme",
+    "Outro filme",
     {
       "cats": {
-        "DIRECTOR_NAME": 1
+        "RANDOM_MOVIE": 1
       }
     }
   ],
   [
-    "Diretor do filme",
+    "Me mostre uma lista de filmes do gênero ação",
     {
       "cats": {
-        "DIRECTOR_NAME": 1
+        "GENDER_MOVIE": 1
+      }
+    }
+  ],
+  [
+    "Lista de filmes de ação",
+    {
+      "cats": {
+        "GENDER_MOVIE": 1
+      }
+    }
+  ],
+  [
+    "Filmes de ação",
+    {
+      "cats": {
+        "GENDER_MOVIE": 1
+      }
+    }
+  ],
+  [
+    "Mais filmes",
+    {
+      "cats": {
+        "GENDER_MOVIE": 1
+      }
+    }
+  ],
+  [
+    "Mais",
+    {
+      "cats": {
+        "GENDER_MOVIE": 1
+      }
+    }
+  ],
+  [
+    "Outros filmes",
+    {
+      "cats": {
+        "GENDER_MOVIE": 1
+      }
+    }
+  ],
+  [
+    "Outros",
+    {
+      "cats": {
+        "GENDER_MOVIE": 1
+      }
+    }
+  ],
+  [
+    "Me mostre uma lista de filmes da plataform netflix",
+    {
+      "cats": {
+        "PLATFORM_MOVIE": 1
+      }
+    }
+  ],
+  [
+    "Lista de filmes da netflix",
+    {
+      "cats": {
+        "PLATFORM_MOVIE": 1
+      }
+    }
+  ],
+  [
+    "Filmes da netflix",
+    {
+      "cats": {
+        "PLATFORM_MOVIE": 1
+      }
+    }
+  ],
+  [
+    "Mais filmes",
+    {
+      "cats": {
+        "PLATFORM_MOVIE": 1
+      }
+    }
+  ],
+  [
+    "Mais",
+    {
+      "cats": {
+        "PLATFORM_MOVIE": 1
+      }
+    }
+  ],
+  [
+    "Outras plataformas",
+    {
+      "cats": {
+        "PLATFORM_MOVIE": 1
+      }
+    }
+  ],[
+    "Outras",
+    {
+      "cats": {
+        "PLATFORM_MOVIE": 1
       }
     }
   ]

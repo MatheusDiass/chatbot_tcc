@@ -11,7 +11,7 @@ def train_ner(nlp):
     # Cria um componente NER em branco
     ner = nlp.add_pipe("ner")
 
-    labels = ["DIRECTOR", "AUTHORS", "RELEASED", "GENDER"]
+    labels = ["MOVIE", "GENDER", "PLATFORM"]
 
     # Adiciona os rotulos ao componente
     for label in labels:
@@ -29,7 +29,7 @@ def train_ner(nlp):
             i[1]["entities"] = entities
 
     # Épocas(loop) para treinar o modelo (NER Component)
-    epochs = 30
+    epochs = 100
 
     # Percorre os componentes desabilitando e deixando apenas o componente NER para ser treinado
     other_pipes = [pipe for pipe in nlp.pipe_names if pipe != 'ner']
