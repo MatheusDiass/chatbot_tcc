@@ -1,9 +1,0 @@
-{
-  "labels":[
-    "RANDOM_MOVIE",
-    "GENDER_MOVIE",
-    "PLATFORM_MOVIE"
-  ],
-  "threshold":0.5,
-  "positive_label":null
-}

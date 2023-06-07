@@ -5,8 +5,7 @@ import os
 from use_cases.fetch_movie_by_name_use_case import fetch_movie_by_name_use_case
 from use_cases.fetch_movies_by_gender_use_case import fetch_movies_by_gender_use_case
 from use_cases.fetch_random_movie_use_case import fetch_random_movie_use_case
-
-from api.fetch_movies_by_platform import fetch_movies_by_platform
+from use_cases.fetch_movies_by_platform_use_case import fetch_movies_by_platform_use_case
 
 from utils.reset_state import reset_state
 
@@ -15,18 +14,20 @@ load_dotenv()
 
 nlp = spacy.load("./train_scripts/train.spacy")
 
-# Paginas da busca por funcionalidade
-movies_gender_pages = 1
-movies_platform_pages = 1
-
 # Controle de estado para saber qual a funcionalidade da ultima execução
 state = {
     "movie_name": False,
+    "random_movie": False,
     "gender_movie": {
         "state": False,
-        "last_gender_name": ""
+        "last_gender_name": "",
+        "page": 1
     },
-    "random_movie": False
+    "platform_movie": {
+        "state": False,
+        "last_platform_name": "",
+        "page": 1
+    }
 }
 
 while True:
@@ -48,19 +49,25 @@ while True:
         # Busca lista de filmes pelo genero
         if entity.label_ == "GENDER" and doc.cats["GENDER_MOVIE"] > 0.5:
             print("INICIO")
-            fetch_movies_by_gender_use_case(state, entity.text, movies_gender_pages)
+            fetch_movies_by_gender_use_case(state, entity.text)
             finished = True
 
         if entity.label_ == "PLATFORM" and doc.cats["PLATFORM_MOVIE"] > 0.5:
-            fetch_movies_by_platform(entity.text, movies_platform_pages)
+            fetch_movies_by_platform_use_case(state, entity.text)
             finished = True
 
         pass
 
-    if doc.cats["GENDER_MOVIE"] > 0.5 and not len(doc.ents) and state["gender_movie"]["state"]:
+    if doc.cats["MORE_MOVIES"] > 0.5 and not len(doc.ents) and state["gender_movie"]["state"]:
         print("CONTINUAÇÃO")
-        movies_gender_pages += 1
-        fetch_movies_by_gender_use_case(state, None, movies_gender_pages)
+        state["gender_movie"]["page"] += 1
+        fetch_movies_by_gender_use_case(state, None)
+        finished = True
+
+    if doc.cats["MORE_MOVIES"] > 0.5 and not len(doc.ents) and state["platform_movie"]["state"]:
+        print("CONTINUAÇÃO - PLATFORM")
+        state["platform_movie"]["page"] += 1
+        fetch_movies_by_platform_use_case(state, None)
         finished = True
 
     # Busca filme aleatorio

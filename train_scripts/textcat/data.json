@@ -64,38 +64,6 @@
     }
   ],
   [
-    "Mais filmes",
-    {
-      "cats": {
-        "GENDER_MOVIE": 1
-      }
-    }
-  ],
-  [
-    "Mais",
-    {
-      "cats": {
-        "GENDER_MOVIE": 1
-      }
-    }
-  ],
-  [
-    "Outros filmes",
-    {
-      "cats": {
-        "GENDER_MOVIE": 1
-      }
-    }
-  ],
-  [
-    "Outros",
-    {
-      "cats": {
-        "GENDER_MOVIE": 1
-      }
-    }
-  ],
-  [
     "Me mostre uma lista de filmes da plataform netflix",
     {
       "cats": {
@@ -123,7 +91,7 @@
     "Mais filmes",
     {
       "cats": {
-        "PLATFORM_MOVIE": 1
+        "MORE_MOVIES": 1
       }
     }
   ],
@@ -131,22 +99,23 @@
     "Mais",
     {
       "cats": {
-        "PLATFORM_MOVIE": 1
+        "MORE_MOVIES": 1
       }
     }
   ],
   [
-    "Outras plataformas",
+    "Outros filmes",
     {
       "cats": {
-        "PLATFORM_MOVIE": 1
+        "MORE_MOVIES": 1
       }
     }
-  ],[
-    "Outras",
+  ],
+  [
+    "Outros",
     {
       "cats": {
-        "PLATFORM_MOVIE": 1
+        "MORE_MOVIES": 1
       }
     }
   ]

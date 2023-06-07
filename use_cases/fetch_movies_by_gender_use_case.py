@@ -2,7 +2,7 @@ from utils.reset_state import reset_state
 from api.fetch_movies_by_gender import fetch_movies_by_gender
 
 
-def fetch_movies_by_gender_use_case(state, entity_text, movies_gender_pages):
+def fetch_movies_by_gender_use_case(state, entity_text):
     # Atualiza estado
     reset_state(state)
     state["gender_movie"]["state"] = True
@@ -10,7 +10,7 @@ def fetch_movies_by_gender_use_case(state, entity_text, movies_gender_pages):
     if entity_text:
         state["gender_movie"]["last_gender_name"] = entity_text
 
-    movies = fetch_movies_by_gender(state["gender_movie"]["last_gender_name"], movies_gender_pages)["results"]
+    movies = fetch_movies_by_gender(state["gender_movie"]["last_gender_name"], state["gender_movie"]["page"])["results"]
 
     # Verifica se não foram encontrados filmes
     if not movies:

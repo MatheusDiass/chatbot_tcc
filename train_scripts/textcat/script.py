@@ -18,7 +18,7 @@ def train_textcat(nlp):
     textcat = nlp.add_pipe("textcat", config=config)
 
     # Adiciona os rotulos ao componente
-    labels = ["RANDOM_MOVIE", "GENDER_MOVIE"]
+    labels = ["RANDOM_MOVIE", "GENDER_MOVIE", "PLATFORM_MOVIE", "MORE_MOVIES"]
 
     # Adiciona os rotulos ao componente
     for label in labels:
