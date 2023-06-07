@@ -1,5 +1,6 @@
 import spacy
-import random
+from dotenv.main import load_dotenv
+import os
 
 from use_cases.fetch_movie_by_name_use_case import fetch_movie_by_name_use_case
 from use_cases.fetch_movies_by_gender_use_case import fetch_movies_by_gender_use_case
@@ -9,7 +10,8 @@ from api.fetch_movies_by_platform import fetch_movies_by_platform
 
 from utils.reset_state import reset_state
 
-tmdb_api_key = "07a1466a009ea7d7857d15d1b6522ffa"
+# Carrega as variáveis de ambiente (env file)
+load_dotenv()
 
 nlp = spacy.load("./train_scripts/train.spacy")
 
