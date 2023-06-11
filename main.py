@@ -6,6 +6,7 @@ from use_cases.fetch_movie_by_name_use_case import fetch_movie_by_name_use_case
 from use_cases.fetch_movies_by_gender_use_case import fetch_movies_by_gender_use_case
 from use_cases.fetch_random_movie_use_case import fetch_random_movie_use_case
 from use_cases.fetch_movies_by_platform_use_case import fetch_movies_by_platform_use_case
+from use_cases.fetch_movies_use_case import fetch_movies_use_case
 
 from utils.reset_state import reset_state
 
@@ -26,6 +27,10 @@ state = {
     "platform_movie": {
         "state": False,
         "last_platform_name": "",
+        "page": 1
+    },
+    "all_movies": {
+        "state": False,
         "page": 1
     }
 }
@@ -58,21 +63,31 @@ while True:
 
         pass
 
-    if doc.cats["MORE_MOVIES"] > 0.5 and not len(doc.ents) and state["gender_movie"]["state"]:
+    if doc.cats["MORE_MOVIES"] > 0.9 and not len(doc.ents) and state["gender_movie"]["state"]:
         print("CONTINUAÇÃO")
         state["gender_movie"]["page"] += 1
         fetch_movies_by_gender_use_case(state, None)
         finished = True
 
-    if doc.cats["MORE_MOVIES"] > 0.5 and not len(doc.ents) and state["platform_movie"]["state"]:
+    if doc.cats["MORE_MOVIES"] > 0.9 and not len(doc.ents) and state["platform_movie"]["state"]:
         print("CONTINUAÇÃO - PLATFORM")
         state["platform_movie"]["page"] += 1
         fetch_movies_by_platform_use_case(state, None)
         finished = True
 
+    if doc.cats["MORE_MOVIES"] > 0.8 and not len(doc.ents) and state["all_movies"]["state"]:
+        print("CONTINUAÇÃO - ALL")
+        state["all_movies"]["page"] += 1
+        fetch_movies_use_case(state)
+        finished = True
+
     # Busca filme aleatorio
-    if doc.cats["RANDOM_MOVIE"] > 0.5 and not finished:
+    if doc.cats["RANDOM_MOVIE"] > 0.9 and not finished:
         fetch_random_movie_use_case(state)
+        finished = True
+
+    if doc.cats["ALL_MOVIES"] > 0.9 and not finished:
+        fetch_movies_use_case(state)
         finished = True
 
     if not finished:

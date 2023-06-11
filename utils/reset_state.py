@@ -8,4 +8,8 @@ def reset_state(states):
             states[key]["state"] = False
             continue
 
-        states[key] = 0
+        if key == "all_movies":
+            states[key]["state"] = False
+            continue
+
+        states[key] = False

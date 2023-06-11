@@ -64,6 +64,22 @@
     }
   ],
   [
+    "Filmes de terror",
+    {
+      "cats": {
+        "GENDER_MOVIE": 1
+      }
+    }
+  ],
+  [
+    "Filmes de drama",
+    {
+      "cats": {
+        "GENDER_MOVIE": 1
+      }
+    }
+  ],
+  [
     "Me mostre uma lista de filmes da plataform netflix",
     {
       "cats": {
@@ -84,6 +100,54 @@
     {
       "cats": {
         "PLATFORM_MOVIE": 1
+      }
+    }
+  ],
+  [
+    "Me mostre alguns filmes",
+    {
+      "cats": {
+        "ALL_MOVIES": 1
+      }
+    }
+  ],
+  [
+    "Me mostre uma lista de filmes",
+    {
+      "cats": {
+        "ALL_MOVIES": 1
+      }
+    }
+  ],
+  [
+    "Me mostre todos os filmes disponíveis",
+    {
+      "cats": {
+        "ALL_MOVIES": 1
+      }
+    }
+  ],
+  [
+    "Me mostre uma lista de filmes",
+    {
+      "cats": {
+        "ALL_MOVIES": 1
+      }
+    }
+  ],
+  [
+    "Quero uma lista de filmes",
+    {
+      "cats": {
+        "ALL_MOVIES": 1
+      }
+    }
+  ],
+  [
+    "Me fale todos os filmes",
+    {
+      "cats": {
+        "ALL_MOVIES": 1
       }
     }
   ],
